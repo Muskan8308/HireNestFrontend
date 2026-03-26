@@ -29,9 +29,10 @@ public class User {
 	@Column(unique=true)
 	private String email;
 	
-	@Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za- z\\d@$!%*?&]{8,}$",
+	@Pattern(
+		    regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@#$%^&+=!]).{8,}$",
 		    message = "{user.password.invalid}")
-	@NotBlank(message="{user.password.abse  nt}")
+	@NotBlank(message="{user.password.absent}")
 	private String password;
 	
 	private AccountType accountType;
